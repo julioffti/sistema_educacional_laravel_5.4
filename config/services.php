@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => CONDER\User::class,
+        'model' => \CONDER\Models\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

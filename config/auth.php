@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => CONDER\User::class,
+            'model' => \CONDER\Models\User::class,
         ],
 
         // 'users' => [

@@ -2,7 +2,7 @@
 
 namespace CONDER\Http\Controllers\Auth;
 
-use CONDER\User;
+use CONDER\Models\User;
 use CONDER\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -58,7 +58,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \CONDER\User
+     * @return \CONDER\Models\User
      */
     protected function create(array $data)
     {

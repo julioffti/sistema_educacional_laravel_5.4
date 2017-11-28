@@ -11,7 +11,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\CONDER\User::class)->create([
+        factory(\CONDER\Models\User::class)->create([
            'email' => 'admin@user.com'
         ]);
     }

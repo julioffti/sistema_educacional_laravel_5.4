@@ -12,7 +12,7 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(CONDER\User::class, function (Faker\Generator $faker) {
+$factory->define(\CONDER\Models\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
