@@ -2,6 +2,7 @@
 
 namespace CONDER\Http\Controllers\Admin;
 
+use CONDER\Forms\UserForm;
 use CONDER\Models\User;
 use Illuminate\Http\Request;
 use CONDER\Http\Controllers\Controller;
@@ -25,7 +26,12 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+       $form = \FormBuilder::create(UserForm::class,[
+            'url' => route('admin.users.store'),
+            'method' => 'POST'
+        ]);
+
+        return view('admin.users.create', compact('form'));
     }
 
     /**
