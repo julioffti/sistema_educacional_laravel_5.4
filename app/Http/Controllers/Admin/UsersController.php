@@ -42,7 +42,14 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form = \FormBuilder::create(UserForm::class);
+
+        if (!$form->isValid()){
+            return redirect()
+                ->back()//redireciona para a pagina anterior
+                ->withErrors($form->getErrors())//captura os erros
+                ->withInput();//captura os valores digitados nos campos
+        }
     }
 
     /**

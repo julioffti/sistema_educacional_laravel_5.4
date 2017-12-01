@@ -1,5 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-{!! form($form) !!}
+<div class="container">
+    <div class="row">
+        <h3>Novo Usuário</h3>
+        <br/><br/>
+        {!! form($form->add('Insert', 'submit', [
+            'attr' => ['class' => 'btn btn-primary btn-block'],
+            'label' =>'inserir'
+            ]))
+        !!}
+    </div>
+</div>
+
 @endsection
