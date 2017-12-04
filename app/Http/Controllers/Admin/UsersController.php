@@ -50,6 +50,11 @@ class UsersController extends Controller
                 ->withErrors($form->getErrors())//captura os erros
                 ->withInput();//captura os valores digitados nos campos
         }
+
+        $data = $form->getFieldValues();
+        $password = str_random(6);
+        $data['password'] = $password;
+        User::created($data);
     }
 
     /**

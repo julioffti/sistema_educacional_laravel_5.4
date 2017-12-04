@@ -7,8 +7,8 @@
         <br/><br/>
         {!! form($form->add('Insert', 'submit', [
             'attr' => ['class' => 'btn btn-primary btn-block'],
-            'label' =>'inserir'
-            ]))
+            'label' =>'Inserir'
+            ]));
         !!}
     </div>
 </div>
