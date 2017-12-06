@@ -16,7 +16,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::paginate();
+        return view('admin.users.index', compact('users'));
     }
 
     /**
@@ -54,7 +55,9 @@ class UsersController extends Controller
         $data = $form->getFieldValues();
         $password = str_random(6);
         $data['password'] = $password;
-        User::created($data);
+        User::create($data);
+
+        return redirect()->route( 'admin.users.index');
     }
 
     /**
