@@ -9,7 +9,16 @@
         </div>
         <br/>
         <div class="row">
-            {!! Table::withContents($users->items())!!}
+            {!!
+            Table::withContents($users->items())
+            -> striped()
+            -> callback('Ações', function($field, $model){
+                $linkEdit = route('admin.users.edit', ['user' => $model->id]);
+                $linkShow = route('admin.users.show', ['user' => $model->id]);
+                return Button::link('Editar')->asLinkTo($linkEdit).'|'
+                       .Button::link('Ver')->asLinkTo($linkShow);
+            })
+            !!}
         </div>
             {!! $users->links() !!}
 </div>
