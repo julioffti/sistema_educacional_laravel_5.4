@@ -9,9 +9,9 @@
                 $linkEdit = route('admin.users.edit', ['user' => $user->id]);
                 $linkDelete = route('admin.users.destroy',['user' => $user->id]);
             @endphp
-                {!! Button::primary('Editar')->asLinkTo($linkEdit) !!}
+                {!! Button::primary(Icon::pencil().'&nbsp Editar')->asLinkTo($linkEdit) !!}
                 {!!
-                 Button::danger('Excluir')->asLinkTo($linkDelete)
+                 Button::danger(Icon::trash().'&nbsp Excluir')->asLinkTo($linkDelete)
                     ->addAttributes([
                         'onclick' => "event.preventDefault();document.getElementById(\"form-delete\").submit();"
                     ])
