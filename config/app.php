@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'laravel'),
 
     /*
     |--------------------------------------------------------------------------
@@ -231,7 +231,9 @@ return [
         'FormBuilder' => \Kris\LaravelFormBuilder\Facades\FormBuilder::class,
         'Table' => Bootstrapper\Facades\Table::class,
         'Button' => Bootstrapper\Facades\Button::class,
-        'Icon' => Bootstrapper\Facades\Icon::class
+        'Icon' => Bootstrapper\Facades\Icon::class,
+        'Navbar' => Bootstrapper\Facades\Navbar::class,
+        'Navigatiton' => Bootstrapper\Facades\Navigation::class
 
 
     ],

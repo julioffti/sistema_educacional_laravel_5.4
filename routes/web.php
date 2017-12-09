@@ -23,6 +23,10 @@ Route::prefix('admin')->group(function (){
     'as' => 'admin.',
     'middleware' => 'auth'
 ], function(){
+        //rota para a navBar -> painel de controle
+        Route::name('dashboard')->get('/dashboard', function () {
+            return "Estou no painel de controle";
+        });
         Route::resource('users', 'UsersController');
     });
 });
