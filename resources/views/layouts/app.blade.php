@@ -48,7 +48,11 @@
         @endphp
             {!! $navbar !!}
             {!! form($formLogout) !!}
-
+            @if(Session::has('message'))
+                <div class="container">
+                {!! \Bootstrapper\Facades\Alert::success(Session::get('message'))->close() !!}
+                </div>
+            @endif
         @yield('content')
     </div>
 
