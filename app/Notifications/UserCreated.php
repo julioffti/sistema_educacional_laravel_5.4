@@ -46,6 +46,7 @@ class UserCreated extends Notification
                     ->line("Seu número de matrícula é: {$notifiable->enrolment}")
                     ->line('The introduction to the notification.')
                     ->action('Notification Action', url('/'))
-                    ->line('Obrigado por utilizar o nosso sistema');
+                    ->line('Obrigado por utilizar o nosso sistema')
+                    ->salutation('Atenciosamente');
     }
 }
