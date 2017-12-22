@@ -27,6 +27,9 @@ Route::prefix('admin')->group(function (){
         Route::name('dashboard')->get('/dashboard', function () {
             return "Estou no painel de controle";
         });
+        Route::group(['prefix' => 'users', 'as' => 'users.'], function(){
+           Route::name('show_details')->get('show_details', 'UsersController@ShowDetails');
+        });
         Route::resource('users', 'UsersController');
     });
 });

@@ -12,6 +12,13 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style type="text/css">
+        @media print{
+            .hidden-print{
+                display: none !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -52,7 +59,7 @@
             @endif
 
             @if(Session::has('message'))
-                <div class="container">
+                <div class="container hidden-print">
                 {!! \Bootstrapper\Facades\Alert::success(Session::get('message'))->close() !!}
                 </div>
             @endif
