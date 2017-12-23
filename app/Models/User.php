@@ -36,6 +36,10 @@ class User extends Authenticatable implements TableInterface
         'remember_token',
     ];
 
+    public function userable(){
+        return $this->morphTo();
+    }
+
     public static function createFully($data){
         $password = str_random(6);
         $data['password'] = $password;
