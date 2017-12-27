@@ -47,6 +47,11 @@ class LoginController extends Controller
         return $data;
     }
 
+    public function username()
+    {
+        return 'username';
+    }
+
     protected function usernameKey(){
         $email = \Request::get($this->username());
         $validator = \Validator::make([
