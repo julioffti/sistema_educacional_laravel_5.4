@@ -21,7 +21,7 @@ Route::prefix('admin')->group(function (){
     Route::group([
     'namespace' => 'Admin\\',
     'as' => 'admin.',
-    'middleware' => 'auth'
+    'middleware' => ['auth', 'can:admin']
 ], function(){
         //rota para a navBar -> painel de controle
         Route::name('dashboard')->get('/dashboard', function () {

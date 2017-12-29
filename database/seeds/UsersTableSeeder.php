@@ -17,7 +17,6 @@ class UsersTableSeeder extends Seeder
             'enrolment' => 100000
         ])->each(function (User $user){
             User::assignRole($user, User::ROLE_ADMIN);
-            $user->save();
         });
 
         factory(User::class,10)->create()->each(function(User $user){
