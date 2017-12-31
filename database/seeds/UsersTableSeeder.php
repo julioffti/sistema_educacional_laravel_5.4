@@ -14,9 +14,11 @@ class UsersTableSeeder extends Seeder
     {
         factory(\CONDER\Models\User::class)->create([
             'email' => 'admin@user.com',
-            'enrolment' => 100000
-        ])->each(function (User $user){
+            'enrolment' => 100001,
+            'password' => bcrypt('trinity')
+        ])->each(function(User $user){
             User::assignRole($user, User::ROLE_ADMIN);
+            $user->save();
         });
 
         factory(User::class,10)->create()->each(function(User $user){
@@ -27,13 +29,12 @@ class UsersTableSeeder extends Seeder
             }
         });
 
-        factory(User::class,10)->create()->each(function(User $user) {
-            if (!$user->userable) {
+        factory(User::class,10)->create()->each(function(User $user){
+            if(!$user->userable) {
                 User::assignRole($user, User::ROLE_STUDENT);
                 User::assignEnrolment(new User(), User::ROLE_STUDENT);
                 $user->save();
             }
-
         });
     }
 }

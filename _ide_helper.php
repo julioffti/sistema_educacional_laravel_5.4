@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.4.36 on 2017-12-29.
+ * Generated for Laravel 5.4.36 on 2017-12-30.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -15894,7 +15894,7 @@ namespace  {
 
     class Navbar extends \Bootstrapper\Facades\Navbar {}
 
-    class Navigatiton extends \Bootstrapper\Facades\Navigation {}
+    class Navigation extends \Bootstrapper\Facades\Navigation {}
 
     class Alert extends \Bootstrapper\Facades\Alert {}
 

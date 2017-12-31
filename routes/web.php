@@ -19,16 +19,15 @@ Route::prefix('admin')->group(function (){
     Auth::routes();
 
     Route::group([
-    'namespace' => 'Admin\\',
-    'as' => 'admin.',
-    'middleware' => ['auth', 'can:admin']
-], function(){
-        //rota para a navBar -> painel de controle
+        'namespace' => 'Admin\\',
+        'as' => 'admin.',
+        'middleware' => ['auth', 'can:admin']
+    ], function (){
         Route::name('dashboard')->get('/dashboard', function () {
-            return "Estou no painel de controle";
+            return "Estou no Painel de Controle";
         });
-        Route::group(['prefix' => 'users', 'as' => 'users.'], function(){
-           Route::name('show_details')->get('show_details', 'UsersController@ShowDetails');
+        Route::group(['prefix' => 'users', 'as' => 'users.'], function (){
+            Route::name('show_details')->get('show_details', 'UsersController@showDetails');
         });
         Route::resource('users', 'UsersController');
     });
