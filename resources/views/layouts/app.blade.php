@@ -33,20 +33,24 @@
                 $navbar->withContent(Navigation::links($arrayLinks));
             }
 
-            $arrayLinksRight =[
-                [
-                    Auth::user()->name,
-                    [
-                        [
-                            'link' => route('logout'),
-                            'title' => 'Logout',
-                            'linkAttributes' => [
-                                'onclick' => "event.preventDefault();document.getElementById(\"form-logout\").submit();"
-                            ]
-                        ]
-                    ]
+           $arrayLinksRight =[
+    [
+        Auth::user()->name,
+        [
+            [
+                'link' => route('admin.users.settings.edit'),
+                'title' => 'Configurações'
+            ],
+            [
+                'link' => route('logout'),
+                'title' => 'Logout',
+                'linkAttributes' => [
+                    'onclick' => "event.preventDefault();document.getElementById(\"form-logout\").submit();"
                 ]
-            ];
+            ]
+        ]
+    ]
+];
 
             $navbar->withContent(Navigation::links($arrayLinksRight)->right());
 
