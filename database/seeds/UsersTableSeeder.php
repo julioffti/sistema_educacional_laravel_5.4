@@ -21,5 +21,19 @@ class UsersTableSeeder extends Seeder
             $user->save();
         });
 
+        factory(User::class,10)->create()->each(function(User $user){
+            if(!$user->userable) {
+                User::assignRole($user, User::ROLE_TEACHER);
+                User::assignEnrolment(new User(), User::ROLE_TEACHER);
+                $user->save();
+            }
+        });
+        factory(User::class,10)->create()->each(function(User $user){
+            if(!$user->userable) {
+                User::assignRole($user, User::ROLE_STUDENT);
+                User::assignEnrolment(new User(), User::ROLE_STUDENT);
+                $user->save();
+            }
+        });
     }
 }
